@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ID Card Detector</title>
+  <!-- Correct: just the filename relative to /static -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>ID Card Detector</h1>
+    <p>Upload an image to check if it's a real or fake ID</p>
+
+    <form id="UploadForm" action="/predict" method="post" enctype="multipart/form-data">
+      <input id="fileInput" type="file" name="file" accept="image/*" required />
+      <button type="submit">Check</button>
+    </form>
+
+    <div id="preview"></div>
+
+    {% if result %}
+    <div id="result">
+      <p><strong>Prediction:</strong> {{ result }}</p>
+    </div>
+    {% endif %}
+  </div>
+
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
