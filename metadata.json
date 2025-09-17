@@ -1,0 +1,14 @@
+{
+  "class_names": [
+    "Fake",
+    "Original"
+  ],
+  "img_size": [
+    224,
+    224
+  ],
+  "mode": "binary",
+  "positive_class_index": 1,
+  "positive_class_name": "Original",
+  "threshold": 0.05
+}
